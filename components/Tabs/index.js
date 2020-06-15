@@ -20,24 +20,31 @@ const append = (appendTo, element) => {
     return parent;
 }
 
+const elem = (selector, elClass, txtCont, appendTo) => {
+    const element = noel(selector);
+    element.classList.add(elClass);
+    txtCont && (element.textContent = txtCont);
+    append(appendTo, element);
+    console.log('element parent = ', element)
+    return element;
+}
+
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
 .then(response => {
-    let topics = gretel('div.topics');
-    append(topics, Tabs(response));
+    console.log('this is the response: ', response)
+    const tabs = Tabs(response);
 })
      .catch(error => console.log(error));
 
 function Tabs(resData){
-    const {data} = resData.data;
-    const tabs = data;
+    const {data} = resData;
+    console.log('resData = ', data)
+    const tabs = data.topics;
     
     return tabs.forEach(tab => {
-        let element = noel('div');
-        element.classList.add('tab');
-        element.textContent = tab;
-        
         let topics = gretel('.topics');
-        const topicDiv = append(topics, element);    
+        let element = elem('div', 'tab', tab, topics);
+        return element;
     })
 
 }
