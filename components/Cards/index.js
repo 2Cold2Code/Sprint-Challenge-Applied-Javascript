@@ -10,6 +10,7 @@
 
 //
 // Use your function to create a card for each of the articles and add the card to the DOM.
+const cardsContainer = gretel('.cards-container');
 
 let articleObj = axios
   .get("https://lambda-times-backend.herokuapp.com/articles")
@@ -18,45 +19,40 @@ let articleObj = axios
     let rData = obj.data;
     let articlesArr = rData.articles;
 
-    const cardsContainer = document.querySelector(".cards-container");
-
     for (let language in articlesArr) {
       articlesArr = [];
       articlesArr.push(language);
       articlesArr.forEach((language) => {
         let headL = rData.articles;
         headL = headL[language];
-       
+
         headL.forEach((head) => {
-            
-    const card = elem('div', 'card', null, cardsContainer);
-         
-          const headLine = elem('div', 'headline', head.headline, card);
-
-          const author = document.createElement("div");
-          author.classList.add("author");
-          card.appendChild(author);
-
-          const imgContainer = document.createElement("div");
-          imgContainer.classList.add("img-container");
-          author.appendChild(imgContainer);
-
-          const img = document.createElement("img");
-          img.src = head.authorPhoto;
-          imgContainer.appendChild(img);
-
-          const span = document.createElement("span");
-          span.textContent = `By ${head.authorName}`;
-          author.appendChild(span);
+          makeCard(head);
         });
       });
     }
   })
   .catch((e) => console.log(e));
-  
-  const script = document.createElement('script');
-  script.src = '/components/Carousel/Carousel.js';
-  const head = document.querySelector('head');
-  head.appendChild(script);
-  
 
+const makeCard = (data) => {
+  const card = elem("div", "card", null, cardsContainer);
+
+  const headLine = elem("div", "headline", data.headline, card);
+
+  const author = elem("div", "author", null, card);
+
+  const imgContainer = elem("div", "img-container", null, author);
+
+  const img = imgElem("author photo", data.authorPhoto, imgContainer);
+
+  const authorNameText = `By ${data.authorName}`;
+
+  const span = elem("span", "author-name", authorNameText, author);
+
+  return card;
+};
+
+const script = noel("script");
+script.src = "/components/Carousel/Carousel.js";
+const head = gretel("head");
+head.appendChild(script);
