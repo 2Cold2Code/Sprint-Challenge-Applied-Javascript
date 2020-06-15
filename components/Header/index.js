@@ -11,19 +11,6 @@
 // Use your function to create a header
 // and append it to the DOM inside the div.header-container
 
-export const noel = (selector) => document.createElement(selector);
-
-export const gretel = (selector)=> document.querySelector(selector);
-
-export const gretels = (selector) => document.querySelectorAll(selector);
-
-export const append = (appendTo, element) => {
-    let parent = appendTo;
-    let child = element;
-    parent.appendChild(element);
-    return parent;
-}
-
 const header = gretel('.header-container');
 
 function Header(){
