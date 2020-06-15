@@ -6,7 +6,7 @@
 // under the div.topics element.
 //
 //  Each tab should look like this:
-//    <div class="tab">topic here</div>
+//    <div class='tab'>topic here</div>
 
 const noel = (selector) => document.createElement(selector);
 
@@ -22,14 +22,21 @@ const append = (appendTo, element) => {
 
 const elem = (selector, elClass, txtCont, appendTo) => {
     const element = noel(selector);
-    element.classList.add(elClass);
+    elClass && element.classList.add(elClass);
     txtCont && (element.textContent = txtCont);
     append(appendTo, element);
     console.log('element parent = ', element)
     return element;
 }
 
-axios.get('https://lambda-times-backend.herokuapp.com/topics')
+const imgElem = (alt, source, appendTo) => {
+    const element = elem('img', null, null, appendTo);
+    element.src = source;
+    element.alt = alt;
+    return element;
+}
+
+axios.get("https://lambda-times-backend.herokuapp.com/topics")
 .then(response => {
     console.log('this is the response: ', response)
     const tabs = Tabs(response);

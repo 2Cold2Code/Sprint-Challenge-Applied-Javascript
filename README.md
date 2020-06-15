@@ -18,19 +18,19 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 
 ## Description
 
-You are going to create a Lambda Newspaper. Your job is going to be to create the components that make up the newspaper's home page. You will do this at first with static data, then you will request data from a server to create dynamic components.
+You are going to create a Lambda Newspaper. Your job is going to be to create the components that make up the newspaper"s home page. You will do this at first with static data, then you will request data from a server to create dynamic components.
 
 In meeting the minimum viable product (MVP) specifications listed below, you should have a console full of correct responses to the problems given.
 
 ## Self-Study Questions
 
-Demonstrate your understanding of this week's concepts by answering the following free-form questions.
+Demonstrate your understanding of this week"s concepts by answering the following free-form questions.
 
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your team lead.
 
 1. What is the DOM?
 
-   A.) Document Object Model.  An object that is part of browser window and allows HTML to be displayed. It is a copy of the document in object form as well. But, wait, there's more... But that's the gist of it.
+   A.) Document Object Model.  An object that is part of browser window and allows HTML to be displayed. It is a copy of the document in object form as well. But, wait, there"s more... But that"s the gist of it.
 
 2. What is an event?
 
@@ -47,7 +47,7 @@ Edit this document to include your answers after each question. Make sure to lea
 5. What is a component?
 
    A.) A function or object (usually) that is reusable and allows for DRY coding.
-   
+
 ### Git Set up
 
 * [ ] Fork the project into your GitHub user account
@@ -69,12 +69,12 @@ Your finished project must include all of the following requirements:
 
 ## Stretch Problems
 
-Your stretch challenge is to write the functionality of a `Carousel` component. This is an advanced challenge, so you are not expected to be able to complete it. If you begin and don't finish, you should still submit with what you have. This is going to be a bit different because you are going to need to create some advanced functionality for the carousel. There is no need to request data for this exercise.
+Your stretch challenge is to write the functionality of a `Carousel` component. This is an advanced challenge, so you are not expected to be able to complete it. If you begin and don"t finish, you should still submit with what you have. This is going to be a bit different because you are going to need to create some advanced functionality for the carousel. There is no need to request data for this exercise.
 
 * [ ] Complete the carousel functionality in `Carousel.js`
 
 * [ ] If you complete the Carousel, add functionality so that the carousel slides when the buttons are pressed instead of just appearing.
 
-* [ ] Create an 'infinite loop' carousel. In which as long as you click on an arrow, the array of images will loop over itself.
+* [ ] Create an "infinite loop" carousel. In which as long as you click on an arrow, the array of images will loop over itself.
 
 * [ ] If you have finished the above, research `data attributes`. Implement data attributes within your tabs as well as your cards. Give the tabs functionality so that when they are clicked they filter the cards to only display the cards that contain that topic.

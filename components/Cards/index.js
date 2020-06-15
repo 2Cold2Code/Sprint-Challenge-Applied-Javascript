@@ -29,14 +29,9 @@ let articleObj = axios
        
         headL.forEach((head) => {
             
-    const card = document.createElement("div");
-    card.classList.add("card");
-    cardsContainer.appendChild(card);
+    const card = elem('div', 'card', null, cardsContainer);
          
-          const headLine = document.createElement("div");
-          headLine.classList.add("headline");
-          headLine.textContent = head.headline;
-          card.appendChild(headLine);
+          const headLine = elem('div', 'headline', head.headline, card);
 
           const author = document.createElement("div");
           author.classList.add("author");

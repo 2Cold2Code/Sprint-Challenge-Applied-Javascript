@@ -2,10 +2,10 @@
 // -----------------------
 // Write a function that returns the markup you see below:
 //
-//  <div class="header">
-//    <span class="date">SMARCH 28, 2019</span>
+//  <div class='header'>
+//    <span class='date'>SMARCH 28, 2019</span>
 //    <h1>Lambda Times</h1>
-//    <span class="temp">98°</span>
+//    <span class='temp'>98°</span>
 //  </div>
 //
 // Use your function to create a header
@@ -14,29 +14,22 @@
 const header = gretel('.header-container');
 
 function Header(){
-    const headC = append(header, makeHeader())
+    makeHeader(header)
 
     return headC;
 }
 
 Header();
 
-function makeHeader(){
+function makeHeader(root){
 
-    const header = noel('header');
-    header.classList.add('header');
+    const headerHere = elem('header', 'header', null, root);
 
-    const date = noel('span');
-    date.classList.add('date');
-    date.textContent = 'SMARCH 28, 2019';
-    append(header, date);
+    const date = elem('span', 'date', 'SMARCH 28, 2019', headerHere);
 
-    const title = noel('h1');
-    title.textContent = 'Lambda Times';
-    append(header, title);
+    const title = elem('h1', 'title', 'Lambda Times', headerHere);
 
-    const temp = noel('span');
-    temp.textContent = '98\u{00B0}';
-    append(header, temp)
-    return header
+    const temp = noel('span', 'temperature', '98\u{00B0}', headerHere);
+
+    return headerHere
 }
