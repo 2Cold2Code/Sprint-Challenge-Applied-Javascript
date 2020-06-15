@@ -22,7 +22,7 @@ const append = (appendTo, element) => {
 
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
 .then(response => {
-    let topics = gretel('.topics');
+    let topics = gretel('div.topics');
     append(topics, Tabs(response));
 })
      .catch(error => console.log(error));
