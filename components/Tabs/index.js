@@ -28,8 +28,8 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
      .catch(error => console.log(error));
 
 function Tabs(resData){
-    const {data} = resData;
-    const {tabs} = data;
+    const {data} = resData.data;
+    const tabs = data;
     
     return tabs.forEach(tab => {
         let element = noel('div');
